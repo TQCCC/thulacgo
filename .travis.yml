@@ -3,10 +3,9 @@ cache:
   directories:
     - $HOME/.cache/go-build
     - $GOPATH/pkg/mod
-    - models
 
 go:
-  - "1.13.x"
+  - "1.13.5"
 
 env:
   - GO111MODULE=on
@@ -19,6 +18,7 @@ branches:
 install:
   - wget "http://thulac.thunlp.org/source/Models_v1_v2(v1_2).zip"
   - unzip -d models -o "Models_v1_v2(v1_2).zip"
+  - ls -l -a -h
 
 script:
   - go version && go get -v && - go test -timeout 30s github.com/Tsingxiao/thulacgo  -v -count=1
