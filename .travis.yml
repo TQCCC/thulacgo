@@ -21,5 +21,4 @@ install: true
   # - ls -l -a -h
 
 script:
-  - go version && go build main.go && go run main.exe
-  # - go version && go test -timeout 30s github.com/Tsingxiao/thulacgo  -v -count=1
+  - go version && go test -timeout 30s github.com/Tsingxiao/thulacgo  -v -count=1
