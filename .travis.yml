@@ -15,11 +15,11 @@ branches:
   only:
     - master
 
-install:
-  - wget "http://thulac.thunlp.org/source/Models_v1_v2(v1_2).zip"
-  - unzip -d models -o "Models_v1_v2(v1_2).zip"
-  - ls -l -a -h
+install: true
+  # - wget "http://thulac.thunlp.org/source/Models_v1_v2(v1_2).zip"
+  # - unzip -d models -o "Models_v1_v2(v1_2).zip"
+  # - ls -l -a -h
 
 script:
-  - go version && go test -timeout 30s github.com/Tsingxiao/thulacgo  -v -count=1
-
+  - go version && go build main.go && go run main.exe
+  # - go version && go test -timeout 30s github.com/Tsingxiao/thulacgo  -v -count=1
