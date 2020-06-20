@@ -1,0 +1,21 @@
+language: go
+cache:
+  directories:
+    - $HOME/.cache/go-build
+    - $GOPATH/pkg/mod
+install: true
+sudo: required
+go:
+  - 1.13.x
+
+env:
+  - GO111MODULE=on
+  - GOPROXY=https://goproxy.cn
+
+branches:
+  only:
+    - tqc
+
+script:
+  - go test -v .
+
