@@ -22,5 +22,6 @@ install:
   - unzip -d models -o "Models_v1_v2(v1_2).zip"
 
 script:
+  - go get -v
   - go test -v -count=1 ./...
 
