@@ -9,10 +9,11 @@ import (
 	"io"
 	"os"
 	"strings"
+	"testing"
 	"unicode/utf8"
 )
 
-func ExampleSegTest() {
+func TestExampleSeg(t *testing.T) {
 
 	lac := NewThulacgo("models", "", false, false, false, byte('_'))
 	defer lac.Deinit()
@@ -24,7 +25,7 @@ func ExampleSegTest() {
 	//新京报_nz 讯_g （_w 记者_n  _w 周萧_np ）_w 在_p 北京_ns 时间_n 今晨_t 客场_n 与_p 赫塔菲_np 的_u 对_p 决里_n ，_w 长_a 时间_n 人数_n 处于_v 劣势_n 的_u “_w 鹦鹉_n 军团_n ”_w 0_m 比_p 0_m 逼_v 平_a 对手_n 。_w 两_m 轮_q 比赛_v 拿_v 到_v 4分_t ，_w 西班牙人_n 终于_d 摆脱_v 了_u 积分榜_n 副_a 班长_n 的_u 位置_n ，_w 反_d 超_v 莱加内斯_ns 1分_t 排名_v 倒数_v 第二_m 位_q 。_w 武磊_np 赛后_t 在_p 个人_n 社交_n 媒体_n 上_f 用_p “_w 所有_a 人_n 都_d 是_v 好样_a 的_u ”_w 来_v 评价_v 西班牙_ns 人_n 刚_d 经历_v 的_u 比赛_v 。_w
 }
 
-func ExampleSegToSliceTest() {
+func TestExampleSegToSlice(t *testing.T) {
 
 	lac := NewThulacgo("models", "", false, false, false, byte('_'))
 	defer lac.Deinit()
@@ -37,7 +38,7 @@ func ExampleSegToSliceTest() {
 	//新京报_nz 讯_g （_w 记者_n  _w 周萧_np ）_w 在_p 北京_ns 时间_n 今晨_t 客场_n 与_p 赫塔菲_np 的_u 对_p 决里_n ，_w 长_a 时间_n 人数_n 处于_v 劣势_n 的_u “_w 鹦鹉_n 军团_n ”_w 0_m 比_p 0_m 逼_v 平_a 对手_n 。_w 两_m 轮_q 比赛_v 拿_v 到_v 4分_t ，_w 西班牙人_n 终于_d 摆脱_v 了_u 积分榜_n 副_a 班长_n 的_u 位置_n ，_w 反_d 超_v 莱加内斯_ns 1分_t 排名_v 倒数_v 第二_m 位_q 。_w 武磊_np 赛后_t 在_p 个人_n 社交_n 媒体_n 上_f 用_p “_w 所有_a 人_n 都_d 是_v 好样_a 的_u ”_w 来_v 评价_v 西班牙_ns 人_n 刚_d 经历_v 的_u 比赛_v 。_w
 }
 
-func ExampleSegOnlyTest() {
+func TestExampleSegOnly(t *testing.T) {
 
 	lac := NewThulacgo("models", "", true, false, false, byte('_'))
 	defer lac.Deinit()
@@ -49,7 +50,7 @@ func ExampleSegOnlyTest() {
 	//尽管 未能 取得 进球 ， 但 武磊 的 表现 受到 当地 媒体 肯定 —— “ 他 在 场上 一 次 又 一 次 地 跑动 ， 从不 停 下来 。 他 现在 与 队友 磨合 得 越来越 好 ， 不再 拘谨 了 ” 。
 }
 
-func ExampleUserpathTest() {
+func TestExampleUserpath(t *testing.T) {
 
 	lac := NewThulacgo("models", "userdict.txt", false, false, false, byte('_'))
 	defer lac.Deinit()
@@ -61,7 +62,7 @@ func ExampleUserpathTest() {
 	//国家_n 卫健委_j ：_w 16日_t 31_m 个_q 省市_n 和_c 新疆_ns 生产_v 建设_v 兵团_n 报告_v 新增_v 新冠肺炎_uw 确诊_v 病例_n 44_m 例_q ，_w 境外_s 输入_v 病例_n 11_m 例_q ，_w 本土_n 病例_n 33_m 例_n 。_w
 }
 
-func ExampleSegToSliceTest2() {
+func Test2ExampleSegToSlice(t *testing.T) {
 
 	lac := NewThulacgo("models", "", false, false, false, byte('_'))
 	defer lac.Deinit()
@@ -157,7 +158,7 @@ func ProcessLine(r io.Reader, max int, callback func(s string) error) error {
 	return nil
 }
 
-func ExampleThreadSafeSegToSliceTest() {
+func TestExampleThreadSafeSegToSlice(t *testing.T) {
 	lac := NewThulacgo("models", "", false, false, false, byte('_'))
 	defer lac.Deinit()
 	f, err := os.Open("nlputil_test.txt")
@@ -178,7 +179,7 @@ func ExampleThreadSafeSegToSliceTest() {
 	//
 }
 
-func ExampleThreadSafeSegTest() {
+func TestExampleThreadSafeSeg(t *testing.T) {
 	lac := NewThulacgo("models", "", false, false, false, byte('_'))
 	defer lac.Deinit()
 	f, err := os.Open("nlputil_test.txt")

@@ -1,9 +1,13 @@
 language: go
-
-sudo: required
-
 go:
   - "1.13.5"
+
+cache:
+  directories:
+    - $HOME/.cache/go-build
+    - $GOPATH/pkg/mod
+
+sudo: required
 
 env:
   - GO111MODULE=on
@@ -13,5 +17,7 @@ branches:
     - master
 
 install:
-  - go env
   - bash scripts/models.sh
+
+script:
+  - go test -v ./... -count=1
