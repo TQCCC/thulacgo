@@ -7,7 +7,7 @@ import (
 	"github.com/ztrue/tracerr"
 	"golang.org/x/sync/errgroup"
 	"io"
-	"os"
+	//"os"
 	"strings"
 	"testing"
 	"unicode/utf8"
@@ -158,43 +158,43 @@ func ProcessLine(r io.Reader, max int, callback func(s string) error) error {
 	return nil
 }
 
-func TestExampleThreadSafeSegToSlice(t *testing.T) {
-	lac := NewThulacgo("models", "", false, false, false, byte('_'))
-	defer lac.Deinit()
-	f, err := os.Open("nlputil_test.txt")
-	if err != nil {
-		panic(err)
-	}
-	ProcessLine(f, 50000, func(line string) error {
-		line = strings.TrimSpace(line)
-		if line == "" {
-			return nil
-		}
-		ret := lac.SegToSlice(line)
-		fmt.Println(ret)
-		return nil
-	})
+//func TestExampleThreadSafeSegToSlice(t *testing.T) {
+//	lac := NewThulacgo("models", "", false, false, false, byte('_'))
+//	defer lac.Deinit()
+//	f, err := os.Open("nlputil_test.txt")
+//	if err != nil {
+//		panic(err)
+//	}
+//	ProcessLine(f, 50000, func(line string) error {
+//		line = strings.TrimSpace(line)
+//		if line == "" {
+//			return nil
+//		}
+//		ret := lac.SegToSlice(line)
+//		fmt.Println(ret)
+//		return nil
+//	})
+//
+//	//Output:
+//	//
+//}
 
-	//Output:
-	//
-}
-
-func TestExampleThreadSafeSeg(t *testing.T) {
-	lac := NewThulacgo("models", "", false, false, false, byte('_'))
-	defer lac.Deinit()
-	f, err := os.Open("nlputil_test.txt")
-	if err != nil {
-		panic(err)
-	}
-	ProcessLine(f, 50000, func(line string) error {
-		line = strings.TrimSpace(line)
-		if line == "" {
-			return nil
-		}
-		ret := lac.Seg(line)
-		fmt.Println(ret)
-		return nil
-	})
-
-	//Output:
-}
+//func TestExampleThreadSafeSeg(t *testing.T) {
+//	lac := NewThulacgo("models", "", false, false, false, byte('_'))
+//	defer lac.Deinit()
+//	f, err := os.Open("nlputil_test.txt")
+//	if err != nil {
+//		panic(err)
+//	}
+//	ProcessLine(f, 50000, func(line string) error {
+//		line = strings.TrimSpace(line)
+//		if line == "" {
+//			return nil
+//		}
+//		ret := lac.Seg(line)
+//		fmt.Println(ret)
+//		return nil
+//	})
+//
+//	//Output:
+//}
