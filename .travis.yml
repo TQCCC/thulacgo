@@ -17,8 +17,8 @@ branches:
   only:
     - master
 
-install:
-  - bash scripts/models.sh
+install: true
+  # - bash scripts/models.sh
 
 script:
   - go test -v ./... -count=1
