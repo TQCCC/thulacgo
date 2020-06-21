@@ -21,4 +21,4 @@ install:
 #  - bash scripts/models.sh
 
 script:
-  - go test -v thulac_test.go -count=1
+  - go test -v ./... -count=1
