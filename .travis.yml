@@ -3,19 +3,22 @@ cache:
   directories:
     - $HOME/.cache/go-build
     - $GOPATH/pkg/mod
+    - models
+
+install: true
+sudo: required
 
 go:
   - "1.13.5"
+
+env:
+  - GO111MODULE=on
 
 branches:
   only:
     - master
 
-sudo: required
-install:
-  - wget "http://thulac.thunlp.org/source/Models_v1_v2(v1_2).zip"
-  - unzip -o "Models_v1_v2(v1_2).zip"
-  - ls -l -a -h
-  - ls -l -a -h models
 script:
-  - go env -w GO111MODULE=on && go env && go test -count=1
+  - go env
+  - bash scripts/models.sh
+  - go test -count=1
