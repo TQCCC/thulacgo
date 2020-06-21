@@ -16,6 +16,7 @@ install:
   - wget "http://thulac.thunlp.org/source/Models_v1_v2(v1_2).zip"
   - unzip -o "Models_v1_v2(v1_2).zip"
   - ls -l -a -h
+  - ls -l -a -h models
   - go env -w GO111MODULE=on
   - go env -w GOPROXY=https://goproxy.cn
   - go env
