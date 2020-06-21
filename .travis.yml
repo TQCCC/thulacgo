@@ -17,8 +17,7 @@ branches:
     - master
 
 install:
-  - echo 'intall===================='
-#  - bash scripts/models.sh
+  - bash scripts/models.sh
 
 script:
   - go test -v ./... -count=1
