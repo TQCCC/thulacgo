@@ -13,6 +13,13 @@ import (
 	"unicode/utf8"
 )
 
+func TestEcho(t *testing.T)  {
+	fmt.Printf("=================start test")
+	fmt.Printf("=================start test")
+	fmt.Printf("=================start test")
+	fmt.Printf("=================start test")
+}
+
 func TestExampleSeg(t *testing.T) {
 
 	lac := NewThulacgo("models", "", false, false, false, byte('_'))
