@@ -13,4 +13,6 @@ else
 fi
 
 ls -l -a -h
+
+echo '======models content======'
 ls -l -a -h models
