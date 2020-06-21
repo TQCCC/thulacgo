@@ -18,4 +18,4 @@ install: true
   # - ls -l -a -h
   # - ls -l -a -h models
 script:
-  - go env -w GO111MODULE=on && go env && go test -v ./... -count=1
+  - go env -w GO111MODULE=on && go env && go test -v my_test.go -count=1
