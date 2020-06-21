@@ -17,7 +17,8 @@ branches:
     - master
 
 install:
-  - bash scripts/models.sh
+  - echo 'intall===================='
+#  - bash scripts/models.sh
 
 script:
-  - go test -v ./... -count=1
+  - go test -v thulac_test.go -count=1
