@@ -12,9 +12,7 @@ branches:
     - master
 
 install:
-  - echo '=============install==============='
-#  - bash scripts/models.sh
+  - bash scripts/models.sh
 
 script:
   - go test -v ./... -count=1
-  - echo '====== test cmd result is' $? '========'
