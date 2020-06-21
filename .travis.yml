@@ -4,6 +4,12 @@ go:
 
 sudo: required
 
+addons:
+  sonarcloud:
+    organization: "tqccc"
+    token:
+      secure: "l4QgOWYpDg+E3co7r1HcRP5EBxBSCmgFMVOChXOVIzWkjjVZCNc0IouYEbZ4BaJAFFm5GJ8aLGb6H3LkGnk/C7NEFcMoNU2WprxvSMKdqLOaklyDAR7msJx9KGQ8lYIEIpJgOKAB34OCFn/XGFGuXAazVx75W4q26TYrQyemsnU1L8VtaTTdpl1M3hNVchYbI0FxaZA1kOfMa/O1Zr695HmI0R/Jgk1cVWJsanScq0qRuvsL9EGRJOxP/cs92LB2YGBriAcMQBj/2aULpFakyJNsRSn9x07dF5WV4SIX2sVGqcZmqOfvPrDHX2iFRSA3jAKn3dbIiqG07QgJh7OSWQvnJCIZVIvABn4vfZYJoG82n5epJDL0cKPsEI+JCFv4GTEX+xj79h7+A8FgUMc8fT3qrUAHy5MPOvfV0DGoTBdRZIOwHtrKmGfMU+H4RQmgTdNJIcZpP9z+G2m/x2Z+EwmK4/QhNvIs8WQ55+a8H5nCDGHAQWlnVWNtix33CMAjRGcZxdz4Mmmr45eIcPtA9NKq7YGI55pe/iO/k4XYUndoZ/sdXBO0EYn+cwXcdikk8JJcYSO+cG8EO+/Ktvb16MRlu16YFpG3EOe0xQAEmV3XcVqMcqtY30y/ligJSTG/d5+RPBTyXlfdjUqMiussPAZ3rKZq5rrKAzr+j/EkMUs="
+
 env:
   - GO111MODULE=on
 
@@ -16,3 +22,4 @@ install:
 
 script:
   - go test -v ./... -count=1
+  - sonar-scanner
