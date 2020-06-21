@@ -1,6 +1,5 @@
 language: go
 
-install: true
 sudo: required
 
 go:
@@ -13,7 +12,6 @@ branches:
   only:
     - master
 
-script:
+install:
   - go env
   - bash scripts/models.sh
-  - go test -count=1
