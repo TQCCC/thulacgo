@@ -2,11 +2,6 @@ language: go
 go:
   - "1.13.5"
 
-cache:
-  directories:
-    - $HOME/.cache/go-build
-    - $GOPATH/pkg/mod
-
 sudo: required
 
 env:
@@ -22,4 +17,4 @@ install:
 
 script:
   - go test -v ./... -count=1
-  - echo ====== test result is $? ========
+  - echo '====== test cmd result is' $? '========'
