@@ -27,9 +27,9 @@ public:
         fseek(pFile,0,SEEK_END);
         dat_size=ftell(pFile)/sizeof(Entry);
         rewind(pFile);
-        int rtn;
+        // int rtn;
         dat=(Entry*)calloc(sizeof(Entry),dat_size);
-		rtn = fread(dat, sizeof(Entry), dat_size, pFile);
+		fread(dat, sizeof(Entry), dat_size, pFile);
         fclose(pFile);
     }
 
@@ -173,7 +173,7 @@ public:
     int head;
     int tail;
     DATMaker(){
-        Entry init;
+        // Entry init;
         dat_size=1;
         dat=(Entry*)calloc(sizeof(Entry),dat_size);
         dat[0].base=1;dat[0].check=-1;
@@ -288,7 +288,7 @@ public:
     void make_dat(std::vector<KeyValue>& lexicon,int no_prefix=0){
         std::sort(lexicon.begin(),lexicon.end(),&compare_words);
 
-        int size=(int)lexicon.size();
+        // int size=(int)lexicon.size();
         std::vector<int> children;
         Word prefix;
         prefix.clear();
@@ -307,7 +307,7 @@ public:
                 int p_base=-get_info(prefix);
                 
                 gen_children(lexicon,i,prefix,children);
-                int base=assign(p_base,children,offset==(int)word.size());
+                assign(p_base,children,offset==(int)word.size());
             }
             off=-get_info(word);
             if(no_prefix){

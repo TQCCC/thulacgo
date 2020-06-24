@@ -411,7 +411,7 @@ namespace thulac{
         for(int i = 0; i < 7; i ++){
             pun_set.insert(punInts[i]);
         }
-        int current_character=-1;
+        // int current_character=-1;
         int c, num = 0, last_pun = 0;
         sent_tmp.clear();
         for(int i = 0; i < sent.size(); i++){//反复读取输入流

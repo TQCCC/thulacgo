@@ -108,8 +108,8 @@ public:
 		rewind(pFile);
 		int* tra = new int[dat_size];
 		int* sim = new int[dat_size];
-		int rtn = fread(tra, sizeof(int), dat_size, pFile);
-		rtn = fread(sim, sizeof(int), dat_size, pFile);
+		fread(tra, sizeof(int), dat_size, pFile);
+		fread(sim, sizeof(int), dat_size, pFile);
 		for(int i = 0; i < dat_size; i ++){
 			t2s.insert(std::pair<int,int>(tra[i], sim[i]));
 			s2t.insert(std::pair<int,int>(sim[i], tra[i]));
@@ -125,16 +125,16 @@ public:
         bool hasSpace = false;		//use to check whether the char is a space 
 		bool hasOther = false;		//use to check whether isOther(char);
 		bool hasSinglePun = false;	//use to check whether isSinglePun(char);
-		bool hasHttp = false;		//use to check whether isHttp(char);
-		bool hasAt = false;			//use to check whether the char is @
+		// bool hasHttp = false;		//use to check whether isHttp(char);
+		// bool hasAt = false;			//use to check whether the char is @
 		bool hasTitle = false;		//use to check whether the sentence has 《》
 		std::vector<int> httpStartVec;
-		int httpStart = -1;
+		// int httpStart = -1;
 		std::vector<Raw> httpVec;
         int c = -1;
 		Raw tmpRaw;
 		Raw npRaw;
-		int npStart = -1;
+		// int npStart = -1;
 		std::vector<int> npStartVec;
 		std::vector<Raw> npVec;
 		Raw titleRaw;
