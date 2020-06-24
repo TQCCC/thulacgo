@@ -18,7 +18,7 @@ branches:
     - master
 
 install:
- - bash scripts/models.sh
+  - bash scripts/models.sh
 
 script:
   - make clean
