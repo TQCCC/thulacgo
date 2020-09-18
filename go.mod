@@ -1,4 +1,4 @@
-module github.com/Tsingxiao/thulacgo
+module github.com/TQCCC/thulacgo
 
 go 1.13
 
